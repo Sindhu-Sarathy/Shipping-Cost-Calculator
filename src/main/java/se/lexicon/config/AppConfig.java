@@ -4,8 +4,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
+import se.lexicon.calculator.ExpressDomesticShipping;
 import se.lexicon.calculator.ExpressInternationalShipping;
 import se.lexicon.calculator.StandardDomesticShipping;
+import se.lexicon.calculator.StandardInternationalShipping;
 import se.lexicon.model.Destination;
 import se.lexicon.model.ShippingRequest;
 import se.lexicon.model.Speed;
@@ -38,4 +40,14 @@ public class AppConfig {
     public ShippingCostCalculator expressInternationShipping(){
         return new ExpressInternationalShipping();
     }
+    @Bean
+    public ShippingCostCalculator standardInternationalShipping() {
+        return new StandardInternationalShipping();
+    }
+
+    @Bean
+    public ShippingCostCalculator expressDomesticShipping() {
+        return new ExpressDomesticShipping();
+    }
+
 }
