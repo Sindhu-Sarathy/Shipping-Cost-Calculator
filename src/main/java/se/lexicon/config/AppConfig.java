@@ -3,6 +3,7 @@ package se.lexicon.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import se.lexicon.calculator.ExpressDomesticShipping;
 import se.lexicon.calculator.ExpressInternationalShipping;
@@ -19,6 +20,7 @@ import java.util.List;
 
 @Configuration
 //@ComponentScan("se.lexicon.*")
+@PropertySource("classpath:application.properties")
 public class AppConfig {
 
     @Bean
